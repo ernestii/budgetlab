@@ -1,6 +1,9 @@
 import express from 'express'
+import trpc from '@/trpc'
+
 const router = express.Router()
-import prisma from '@/modules/prisma'
+
+router.use('/trpc', trpc)
 
 router.get('/', async (req, res) => {
   res.send('budgetlab')
